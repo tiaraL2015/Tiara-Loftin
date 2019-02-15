@@ -391,6 +391,18 @@ img.hover-shadow {
 </div>
 </footer>
 <script>
+  /*Function hides navigation bar when scrolling down*/
+  var prevScrollpos = window.pageYOffset;
+window.onscroll = function() {
+var currentScrollPos = window.pageYOffset;
+  if (prevScrollpos > currentScrollPos) {
+    document.getElementById("myNavbar").style.top = "0";
+  } else {
+    document.getElementById("myNavbar").style.top = "-50px";
+  }
+  prevScrollpos = currentScrollPos;
+}
+  
 function myMap()
 {
   myCenter=new google.maps.LatLng(35.6125, -77.3666667);
