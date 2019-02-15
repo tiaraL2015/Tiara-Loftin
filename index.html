@@ -186,7 +186,7 @@ img.hover-shadow {
 
 </style>
 <body>
-  <div class="w3-top">
+  <div class="w3-top" id="navigationbar">
     <div class="w3-bar" id="myNavbar" style="color:orange;">
       <a class="w3-bar-item w3-button w3-hover-text-blue w3-hide-medium w3-hide-large w3-right" href="javascript:void(0);" onclick="toggleFunction()" title="Toggle Navigation Menu">
 <i class="fa fa-bars"></i>
@@ -396,9 +396,9 @@ img.hover-shadow {
 window.onscroll = function() {
 var currentScrollPos = window.pageYOffset;
   if (prevScrollpos > currentScrollPos) {
-    document.getElementById("myNavbar").style.top = "0";
+    document.getElementById("navigationbar").style.top = "0";
   } else {
-    document.getElementById("myNavbar").style.top = "-50px";
+    document.getElementById("navigationbar").style.top = "-50px";
   }
   prevScrollpos = currentScrollPos;
 }
@@ -455,17 +455,6 @@ function showSlides(n) {
   slides[slideIndex-1].style.display = "block";
   dots[slideIndex-1].className += " active";
   captionText.innerHTML = dots[slideIndex-1].alt;
-}
-
-// Change style of navbar on scroll
-window.onscroll = function() {myFunction()};
-function myFunction() {
-    var navbar = document.getElementById("myNavbar");
-    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-        navbar.className = "w3-bar" + " w3-card" + " w3-animate-top" + " w3-white";
-    } else {
-        navbar.className = navbar.className.replace(" w3-card w3-animate-top w3-white", "");
-    }
 }
 
 // Used to toggle the menu on small screens when clicking on the menu button
